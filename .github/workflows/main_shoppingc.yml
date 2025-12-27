@@ -59,5 +59,6 @@ jobs:
         with:
           app-name: 'shoppingc'
           slot-name: 'Production'
-          images: 'index.docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_A61D1F0BAFE74685BBDFC9C09380FBFF }}/hariprasadbrao/shoppingapp:${{ github.sha }}'
+          images: 'index.docker.io/hariprasadbrao/shoppingapp:${{ github.sha }}'
+
           
