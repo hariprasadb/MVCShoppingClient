@@ -11,16 +11,16 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0-noble AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Shopping/Shopping.Client/Shopping.Client.csproj", "Shopping.Client/"]
-RUN dotnet restore "./Shopping.Client/Shopping.Client.csproj"
+COPY ["Shopping/Shopping.Client/Shopping.Client.csproj", "Shopping/Shopping.Client/"]
+RUN dotnet restore "./Shopping/Shopping.Client/Shopping.Client.csproj"
 COPY . .
-WORKDIR "/src/Shopping.Client"
-RUN dotnet build "./Shopping.Client.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/Shopping/Shopping.Client"
+RUN dotnet build "./Shopping/Shopping.Client/Shopping.Client.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Shopping.Client.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Shopping/Shopping.Client/Shopping.Client.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
