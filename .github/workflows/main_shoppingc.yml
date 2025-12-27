@@ -34,7 +34,7 @@ jobs:
           context: .
           push: true
           tags: index.docker.io/hariprasadbrao/shoppingapp:${{ github.sha }}
-          file: ./Dockerfile
+          file: ./Shopping/Shopping.Client/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,4 +62,5 @@ jobs:
           images: 'index.docker.io/hariprasadbrao/shoppingapp:${{ github.sha }}'
 
           
+
 
