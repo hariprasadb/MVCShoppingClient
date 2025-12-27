@@ -25,15 +25,15 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: index.docker.io/
-          username: ${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_BF050E1810E14DA09891D284BABFD452 }}
-          password: ${{ secrets.AZUREAPPSERVICE_CONTAINERPASSWORD_2C346D290DA942D4A160D22921DC8351 }}
+          username: ${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_A61D1F0BAFE74685BBDFC9C09380FBFF }}
+          password: ${{ secrets.AZUREAPPSERVICE_CONTAINERPASSWORD_1CEB7D935C4149BAB1F90F8ED68A7DCF }}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: index.docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_BF050E1810E14DA09891D284BABFD452 }}/hariprasadbrao/shoppingapp:${{ github.sha }}
+          tags: index.docker.io/hariprasadbrao/shoppingapp:${{ github.sha }}
           file: ./Dockerfile
 
   deploy:
@@ -49,9 +49,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_703E2423719541BCA3ED4641843BDEA2 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A76ECAD0691A4D1C947082DE6AC01E68 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DB0A7C2AE66D455689989EC63C6B349B }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D59DFC9AD6474A5795CE55D3D821A0C2 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8165299CE05D44B28F443F3384585591 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5764D36C133141E6A67BB249438315E3 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -59,5 +59,7 @@ jobs:
         with:
           app-name: 'shoppingc'
           slot-name: 'Production'
-          images: 'index.docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_BF050E1810E14DA09891D284BABFD452 }}/hariprasadbrao/shoppingapp:${{ github.sha }}'
+          images: 'index.docker.io/hariprasadbrao/shoppingapp:${{ github.sha }}'
+
           
+
