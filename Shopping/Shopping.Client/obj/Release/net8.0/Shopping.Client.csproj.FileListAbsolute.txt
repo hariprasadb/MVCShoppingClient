@@ -13,6 +13,7 @@ C:\Users\harip\source\repos\MVCShoppingClient\Shopping\Shopping.Client\obj\Relea
 C:\Users\harip\source\repos\MVCShoppingClient\Shopping\Shopping.Client\obj\Release\net8.0\Shopping.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\harip\source\repos\MVCShoppingClient\Shopping\Shopping.Client\obj\Release\net8.0\Shopping.Client.RazorAssemblyInfo.cache
 C:\Users\harip\source\repos\MVCShoppingClient\Shopping\Shopping.Client\obj\Release\net8.0\Shopping.Client.RazorAssemblyInfo.cs
+C:\Users\harip\source\repos\MVCShoppingClient\Shopping\Shopping.Client\obj\Release\net8.0\Shopping.Client.sourcelink.json
 C:\Users\harip\source\repos\MVCShoppingClient\Shopping\Shopping.Client\obj\Release\net8.0\staticwebassets.build.json
 C:\Users\harip\source\repos\MVCShoppingClient\Shopping\Shopping.Client\obj\Release\net8.0\staticwebassets.development.json
 C:\Users\harip\source\repos\MVCShoppingClient\Shopping\Shopping.Client\obj\Release\net8.0\staticwebassets\msbuild.Shopping.Client.Microsoft.AspNetCore.StaticWebAssets.props
